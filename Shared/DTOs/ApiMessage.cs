@@ -17,5 +17,10 @@ public class ApiMessage<T>
     [DefaultValue(null)]
     [JsonPropertyName("data")]
     public T? Data { get; set; }
+
+    public ApiMessage()
+    {
+        
+    }
     
 }

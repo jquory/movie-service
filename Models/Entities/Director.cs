@@ -18,10 +18,10 @@ public class Director
     
     [Column("BirthDate", Order = 3)]
     [DefaultValue(null)]
-    public int? Duration { get; set; }
+    public DateTime? BirthDate { get; set; }
     
     [Column("Nationality", Order = 4)]
     [DefaultValue(null)]
-    public DateTime? ReleaseData { get; set; }
+    public string? Nationality { get; set; }
     
 }

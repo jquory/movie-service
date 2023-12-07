@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dummy_api.Models.Entities;
 
+[Table("Genre")]
 public class Genre
 {
     [Key]

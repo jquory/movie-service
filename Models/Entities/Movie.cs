@@ -8,15 +8,17 @@ namespace dummy_api.Models.Entities;
 public class Movie
 {
     [Key]
-    [Required]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
     [Column("MovieID", Order = 1)]
-    public Guid? MovieId { get; set; }
+    public Guid MovieId { get; set; }
     
+    [Required]
     [Column("Title", Order = 2)]
+    [MaxLength(510)]
     public string? Title { get; set; }
     
-    [Column("ReleaseData", Order = 3)]
+    [Column("ReleaseDate", Order = 3)]
     [DefaultValue(null)]
     public DateTime? ReleaseDate { get; set; }
     
@@ -31,8 +33,9 @@ public class Movie
     [Column("DirectorID", Order = 6)]
     [DefaultValue(null)]
     public Guid? DirectorId { get; set; }
-
+    
     [Column("GenreID", Order = 7)]
     [DefaultValue(null)]
     public Guid? GenreId { get; set; }
+
 }
