@@ -13,9 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Director\" />
+    <Folder Include="Controllers\Genre\" />
     <Folder Include="Database\Migrations\" />
     <Folder Include="Infrastructure\Config\" />
     <Folder Include="Infrastructure\Logging\" />
+    <Folder Include="Repositories\Director\" />
+    <Folder Include="Repositories\Genre\" />
+    <Folder Include="Services\Director\" />
+    <Folder Include="Services\Genre\" />
     <Folder Include="Shared\Common\" />
   </ItemGroup>
 
