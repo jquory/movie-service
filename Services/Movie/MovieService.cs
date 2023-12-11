@@ -28,7 +28,7 @@ public class MovieService: IMovieService
         }
         catch (Exception err)
         {
-            return (null, err);
+            return (null, err); 
         }
     }
 
@@ -40,7 +40,7 @@ public class MovieService: IMovieService
 
             if (result == null)
             {
-                return (null, new Exception(err.Message));
+                return (null, new Exception("Movie Not Found"));
             }
 
             return (result, null);

@@ -6,5 +6,5 @@ public interface IMovieRepository
 {
     public (List<MovieResponse>?, Exception?) GetAllMovies();
     public (MovieResponse?, Exception?) CreateMovie(MovieRequest? request);
-    public (MovieResponse?, Exception) GetMovieById(Guid id);
+    public (MovieResponse?, Exception?) GetMovieById(Guid id);
 }

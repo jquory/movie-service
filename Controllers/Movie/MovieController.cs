@@ -18,7 +18,7 @@ public class MovieController: ControllerBase
 
     [HttpGet]
     [Route("/")]
-    public async Task<ActionResult> GetAllMovies()
+    public ActionResult GetAllMovies()
     {
         try
         {
@@ -30,7 +30,7 @@ public class MovieController: ControllerBase
                 {
                     StatusCode = (int)HttpStatusCode.NotFound,
                     Status = "Not Found",
-                    Message = err.Message,
+                    Message = "Movie Not Found",
                 });
             }
 
@@ -56,7 +56,7 @@ public class MovieController: ControllerBase
 
     [HttpGet]
     [Route("/movie/{id}")]
-    public async Task<ActionResult> GetMovieById([FromRoute] Guid id)
+    public ActionResult GetMovieById([FromRoute] Guid id)
     {
         try
         {
@@ -68,7 +68,7 @@ public class MovieController: ControllerBase
                 {
                     StatusCode = (int)HttpStatusCode.NotFound,
                     Status = "Not Found",
-                    Message = err.Message,
+                    Message = "Movie Not Found",
                 });
             }
 
@@ -94,7 +94,7 @@ public class MovieController: ControllerBase
 
     [HttpPost]
     [Route("/movie")]
-    public async Task<ActionResult> CreateMovie([FromBody] MovieRequest request)
+    public ActionResult CreateMovie([FromBody] MovieRequest request)
     {
         try
         {

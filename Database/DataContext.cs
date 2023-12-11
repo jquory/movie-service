@@ -17,7 +17,7 @@ public class DataContext: DbContext
         builder.Entity<Genre>().HasKey(x => x.GenreId);
     }
 
-    public virtual DbSet<Movie> Movies { get; set; }
-    public virtual DbSet<Director> Directors { get; set; }
-    public virtual DbSet<Genre> Genres { get; set; }
+    public virtual DbSet<Movie> Movies { get; set; } = null!;
+    public virtual DbSet<Director> Directors { get; set; } = null!;
+    public virtual DbSet<Genre> Genres { get; set; } = null!;
 }
