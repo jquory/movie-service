@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pO4kJzKUlLk5QQXBRf3lw3EBTwWKnp4jiv+gCTnuAr+3fty+gTCHJ3UmhEtfp540KxhM13fPvNMICGEBblLluA==",
+  "dgSpecHash": "sQ9YoVfGNuCZrf1NeAbGlQBatuCJhG7WdtIdDiIavqudeS5FjORil2PFMEgcNtN+Yz5FhCH38+duNo/4/Ka0fw==",
   "success": true,
   "projectFilePath": "/Users/qorey/coding/c#/dummy-api/dummy-api.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "/Users/qorey/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/qorey/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/qorey/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/Users/qorey/.nuget/packages/serilog/3.1.1/serilog.3.1.1.nupkg.sha512",
     "/Users/qorey/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/Users/qorey/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/Users/qorey/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

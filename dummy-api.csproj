@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
@@ -17,7 +18,7 @@
     <Folder Include="Controllers\Genre\" />
     <Folder Include="Database\Migrations\" />
     <Folder Include="Infrastructure\Config\" />
-    <Folder Include="Infrastructure\Logging\" />
+    <Folder Include="Infrastructure\Log\" />
     <Folder Include="Repositories\Director\" />
     <Folder Include="Repositories\Genre\" />
     <Folder Include="Services\Director\" />

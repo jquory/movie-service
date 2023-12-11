@@ -1,6 +1,6 @@
 using dummy_api.Database;
 using dummy_api.Shared.Contracts.Movie;
-using dummy_api.Shared.DTOs.Movie;
+using dummy_api.Shared.DTO.Movie;
 using dummy_api.Models.Entities;
 
 namespace dummy_api.Repositories.Movie;

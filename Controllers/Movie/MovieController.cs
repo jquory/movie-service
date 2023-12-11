@@ -1,7 +1,7 @@
 using System.Net;
 using dummy_api.Shared.Contracts.Movie;
-using dummy_api.Shared.DTOs;
-using dummy_api.Shared.DTOs.Movie;
+using dummy_api.Shared.DTO;
+using dummy_api.Shared.DTO.Movie;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dummy_api.Controllers.Movie;

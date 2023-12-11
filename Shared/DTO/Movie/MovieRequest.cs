@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace dummy_api.Shared.DTOs.Movie;
+namespace dummy_api.Shared.DTO.Movie;
 
 public class MovieRequest
 {

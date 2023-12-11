@@ -1,4 +1,4 @@
-using dummy_api.Shared.DTOs.Movie;
+using dummy_api.Shared.DTO.Movie;
 
 namespace dummy_api.Shared.Contracts.Movie;
 

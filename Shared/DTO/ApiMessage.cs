@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 
-namespace dummy_api.Shared.DTOs;
+namespace dummy_api.Shared.DTO;
 
 public class ApiMessage<T>
 {
