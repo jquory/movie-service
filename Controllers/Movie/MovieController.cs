@@ -54,6 +54,44 @@ public class MovieController: ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("/movie/{id}")]
+    public async Task<ActionResult> GetMovieById([FromRoute] Guid id)
+    {
+        try
+        {
+            var (result, err) = _movieService.GetMovieById(id);
+
+            if (result == null)
+            {
+                return NotFound(new ApiMessage<MovieResponse>()
+                {
+                    StatusCode = (int)HttpStatusCode.NotFound,
+                    Status = "Not Found",
+                    Message = err.Message,
+                });
+            }
+
+            return Ok(new ApiMessage<MovieResponse>()
+            {
+                StatusCode = (int)HttpStatusCode.OK,
+                Status = "OK",
+                Message = "Success",
+                Data = result
+            });
+        }
+        catch (Exception err)
+        {
+            return NotFound(new ApiMessage<MovieResponse>()
+            {
+                StatusCode = (int)HttpStatusCode.InternalServerError,
+                Status = "Internal Server Error",
+                Message = err.Message,
+                Data = null
+            });
+        }
+    }
+
     [HttpPost]
     [Route("/movie")]
     public async Task<ActionResult> CreateMovie([FromBody] MovieRequest request)

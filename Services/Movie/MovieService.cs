@@ -32,6 +32,25 @@ public class MovieService: IMovieService
         }
     }
 
+    public (MovieResponse?, Exception?) GetMovieById(Guid id)
+    {
+        try
+        {
+            var (result, err) = _movieRepository.GetMovieById(id);
+
+            if (result == null)
+            {
+                return (null, new Exception(err.Message));
+            }
+
+            return (result, null);
+        }
+        catch (Exception err)
+        {
+            return (null, new Exception(err.Message));
+        }
+    }
+
     public (MovieResponse?, Exception?) CreateMovie(MovieRequest? request)
     {
         try

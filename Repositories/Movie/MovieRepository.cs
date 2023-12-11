@@ -48,6 +48,40 @@ public class MovieRepository: IMovieRepository
         }
     }
 
+    public (MovieResponse?, Exception?) GetMovieById(Guid id)
+    {
+        try
+        {
+            var query = _db.Movies.Where(movie => movie.MovieId == id)
+                .Join(_db.Directors, movie => movie.DirectorId, director => director.DirectorId,
+                    (movie, director) => new { movie, director })
+                .Join(_db.Genres, @t => @t.movie.GenreId, genre => genre.GenreId,
+                    (result, genre) => new MovieResponse
+                    {
+                        Id = result.movie.MovieId,
+                        Title = result.movie.Title,
+                        ReleaseDate = result.movie.ReleaseDate,
+                        Duration = result.movie.Duration,
+                        Synopsis = result.movie.Synopsis,
+                        Director = result.director.DirectorName,
+                        Genre = genre.GenreName,
+                    });
+
+            var result = query.FirstOrDefault();
+
+            if (result == null)
+            {
+                return (null, new Exception("No movies found")); 
+            }
+
+            return (result, null);
+        }
+        catch (Exception err)
+        {
+            return (null, new Exception(err.Message));
+        }
+    }
+
     public (MovieResponse?, Exception?) CreateMovie(MovieRequest? request)
     {
         try
