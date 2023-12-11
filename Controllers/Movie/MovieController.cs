@@ -22,6 +22,7 @@ public class MovieController: ControllerBase
     {
         try
         {
+            // 
             var (result, err) = _movieService.GetAllMovies();
 
             if (err != null || result == null)
