@@ -1,0 +1,49 @@
+version: '3'
+
+networks:
+  cobaes:
+    name: cobaes
+    driver: bridge
+
+services: 
+  elasticsearch:
+    image: elasticsearch:7.17.15
+    environment:
+      - discovery.type=single_node
+    ports:
+      - "9200:9200"
+    networks: 
+      - cobaes
+  
+  logstash:
+    image: logstash:7.17.15
+    volumes:
+      - ./Infrastructure/Log/Logstash:/usr/share/logstash/config
+    ports:
+      - "5044:5044"
+    depends_on: 
+      - elasticsearch
+    networks: 
+      - cobaes
+  
+  kibana:
+    image: kibana:7.17.15
+    ports:
+      - "5601:5601"
+    depends_on: 
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    networks: 
+      - cobaes
+  
+  filebeat:
+    image: elastic/filebeat:7.17.15
+    volumes:
+      - ./Infrastructure/Config/Filebeat:/usr/share/filebeat/config
+      - /Users/qorey/logs:/Users/qorey/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on: 
+      - logstash
+    networks: 
+      - cobaes

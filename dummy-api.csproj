@@ -8,17 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Elasticsearch.Net" Version="7.17.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.23.1" />
     <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="9.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.23.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\Director\" />
     <Folder Include="Controllers\Genre\" />
     <Folder Include="Database\Migrations\" />
-    <Folder Include="Infrastructure\Config\" />
-    <Folder Include="Infrastructure\Log\" />
     <Folder Include="Repositories\Director\" />
     <Folder Include="Repositories\Genre\" />
     <Folder Include="Services\Director\" />

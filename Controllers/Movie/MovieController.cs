@@ -22,9 +22,10 @@ public class MovieController: ControllerBase
     {
         try
         {
-            // 
+            // Get movie data
             var (result, err) = _movieService.GetAllMovies();
 
+            // Check if movie data is null or has error
             if (err != null || result == null)
             {
                 return NotFound(new ApiMessage<List<MovieResponse>?>()
@@ -35,6 +36,7 @@ public class MovieController: ControllerBase
                 });
             }
 
+            // Return movie data
             return Ok(new ApiMessage<List<MovieResponse>?>()
             {
                 StatusCode = (int)HttpStatusCode.OK,
@@ -61,8 +63,10 @@ public class MovieController: ControllerBase
     {
         try
         {
+            // Get movie data
             var (result, err) = _movieService.GetMovieById(id);
 
+            // Check if movie data is null or has error
             if (result == null)
             {
                 return NotFound(new ApiMessage<MovieResponse>()
@@ -73,6 +77,7 @@ public class MovieController: ControllerBase
                 });
             }
 
+            // Return movie data
             return Ok(new ApiMessage<MovieResponse>()
             {
                 StatusCode = (int)HttpStatusCode.OK,
@@ -99,8 +104,10 @@ public class MovieController: ControllerBase
     {
         try
         {
+            // Execute create movie
             var (result, err) = _movieService.CreateMovie(request);
 
+            // Check is it any error when execute new movie
             if (err != null)
             {
                 return NotFound(new ApiMessage<MovieResponse>()
@@ -111,7 +118,8 @@ public class MovieController: ControllerBase
                     Data = null
                 });
             }
-
+    
+            // Return success if no error
             return Ok(new ApiMessage<MovieResponse>()
             {
                 StatusCode = (int)HttpStatusCode.Created,
